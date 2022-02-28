@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+    //its a two pointer solution indexS and indexT 
+        //we increment indexT in while loop whether char match or not
+        //if char match  we increment the value of indexS this indexS keeps count of letters that are matched 
+        //after every match we check whether length of "s" equals indexS if equals it means all words are matched in sequence 
+        //why in sequence, because we are incrementing indexT always 
+        if (s.length() == 0) return true;
+        int  indexS=0;
+        int indexT=0;
+        while(indexT<t.length())
+        {
+            if(t.charAt(indexT)==s.charAt(indexS))
+            {
+                   indexS++;
+                if(indexS==s.length())
+                    return true;
+            }
+            indexT++;
+        }
+        
+        return false;
+    }
+}
